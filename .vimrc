@@ -20,6 +20,9 @@ syntax on
 
 set history=500
 
+" Show relative line numbers with absolute current line number.
+set number relativenumber
+
 " scroll offset determines the number of context lines you would like to see above and below the cursor	
 set so=7
 
