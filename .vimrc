@@ -1,4 +1,11 @@
-"colo blue
+"colo solarized
+colo molokai
+"colo peaksea
+"colo skittles_dark
+"colo tango
+"colo wombat
+"colo wombat256
+"colo xterm16
 "colo darkblue
 "colo default
 "colo delek
@@ -13,12 +20,15 @@
 "colo peachpuff
 "colo ron
 "colo shine
-colo slate
+"colo slate
 "colo torte
 "colo zellner
 syntax on
-
+let mapleader=","
 set history=500
+set mouse=a
+set incsearch
+"set background=light
 
 " Show relative line numbers with absolute current line number.
 set number relativenumber
@@ -64,3 +74,8 @@ set si "Smart indent
 set wrap "Wrap lines
 
 set runtimepath^=~/.vim/bundle/abstract.vim
+let g:netrw_banner = 0
+
+" Set tabs to 2 in HTML
+autocmd BufRead,BufNewFile *.htm,*.html setlocal tabstop=2 shiftwidth=2 softtabstop=2
+
