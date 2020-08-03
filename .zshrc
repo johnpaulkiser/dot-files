@@ -4,10 +4,12 @@ export PATH="/Applications/Visual Studio Code.app/Contents/Resources/app/bin/:$P
 #LND go configuration environment variables
 export GOPATH=~/gocode
 export PATH=$PATH:$GOPATH/bin
+export PATH=$PATH:~/bin
 
-alias lncli-alice="lncli --rpcserver=localhost:10001 --macaroonpath=data/chain/bitcoin/simnet/admin.macaroon"
-alias lncli-bob="lncli --rpcserver=localhost:10002 --macaroonpath=data/chain/bitcoin/simnet/admin.macaroon"
-alias lncli-charlie="lncli --rpcserver=localhost:10003 --macaroonpath=data/chain/bitcoin/simnet/admin.macaroon"
+alias vrc="vim ~/.vimrc"
+alias ide="tmux_ide.sh"
+alias weather="curl wttr.in"
+
 
 # Path to your oh-my-zsh installation.
 export ZSH="/Users/jpkiser/.oh-my-zsh"
@@ -16,7 +18,9 @@ export ZSH="/Users/jpkiser/.oh-my-zsh"
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-ZSH_THEME="lambda"
+ZSH_THEME="refined"
+
+bindkey -v
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -76,7 +80,7 @@ ZSH_THEME="lambda"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git)
+plugins=(git zsh-autosuggestions)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -107,4 +111,3 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 
-# LND STUFF
