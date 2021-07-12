@@ -1,19 +1,5 @@
-" All plugins must be listeed after this line  
-call plug#begin()
-
-Plug 'morhetz/gruvbox'
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
-"Plug 'ycm-core/YouCompleteMe'
-Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-Plug 'christoomey/vim-tmux-navigator'
-Plug 'junegunn/fzf.vim'
-Plug 'bling/vim-airline'
-Plug 'mattn/emmet-vim'
-Plug 'tpope/vim-surround'
-Plug 'mxw/vim-jsx'
-Plug 'pangloss/vim-javascript'
-
-call plug#end()
+" Load plugin configurations
+source $HOME/.config/nvim/config/plugins.vimrc
 
 colorscheme gruvbox
 set background=dark
@@ -23,24 +9,8 @@ set history=500
 set mouse=a
 set incsearch
 
-" enable fzf
-set rtp+=/usr/local/opt/fzf
-nmap <c-p> :FZF<enter>
-
-nmap <silent> gd <Plug>(coc-definition)
-nmap <silent> gr <Plug>(coc-references)
-"nnoremap <C-p> :GFiles<CR>
-
-" Add tab to auto complete
-function! s:check_back_space() abort
-  let col = col('.') - 1
-  return !col || getline('.')[col - 1]  =~ '\s'
-endfunction
-
-inoremap <silent><expr> <Tab>
-      \ pumvisible() ? "\<C-n>" :
-      \ <SID>check_back_space() ? "\<Tab>" :
-      \ coc#refresh()
+"use system clipboard
+set clipboard=unnamedplus
 
 " Show relative line numbers with absolute current line number.
 set number relativenumber
@@ -87,14 +57,14 @@ nnoremap <leader>h <C-W><C-H>
 set splitbelow
 set splitright
 
-map <Esc><Esc> :w<CR>
-
 " open new file in split
 nnoremap <leader>oj <C-W>n
 nnoremap <leader>ol <C-W>v
 
-" open netrw
-nnoremap <leader>t :Explore<enter>
+" open netrw (commented out because of nerdtree)
+" nnoremap <leader>t :Explore<enter>
+
+nmap <Esc><Esc> :w<CR>
 
 " Linebreak on 500 characters
 set lbr

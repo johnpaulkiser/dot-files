@@ -1,26 +1,23 @@
 # If you come from bash you might have to change your $PATH.
 export PATH=$HOME/bin:/usr/local/bin:$PATH
 export PATH="/Applications/Visual Studio Code.app/Contents/Resources/app/bin/:$PATH"
-#LND go configuration environment variables
-export GOPATH=~/gocode
-export PATH=$PATH:$GOPATH/bin
-export PATH=$PATH:~/bin
 
+alias vim="nvim"
 alias vrc="vim ~/.vimrc"
-alias ide="tmux_ide.sh"
+alias ide="~/tmux_ide.sh"
 alias weather="curl wttr.in"
+export EDITOR='nvim'
+
 
 
 # Path to your oh-my-zsh installation.
-export ZSH="/Users/jpkiser/.oh-my-zsh"
+export ZSH="/Users/jp/.oh-my-zsh"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-ZSH_THEME="refined"
-
-bindkey -v
+ZSH_THEME="fwalch"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -80,9 +77,11 @@ bindkey -v
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git zsh-autosuggestions)
+plugins=(git zsh-autosuggestions vi-mode)
 
 source $ZSH/oh-my-zsh.sh
+
+VI_MODE_SET_CURSOR=true
 
 # User configuration
 
@@ -107,7 +106,12 @@ source $ZSH/oh-my-zsh.sh
 # For a full list of active aliases, run `alias`.
 #
 # Example aliases
-# alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
+ alias zshrc="vim ~/.zshrc"
+ alias ohmyzsh="vim ~/.oh-my-zsh"
 
 
+export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
+
+# vi mode
+#bindkey -v
